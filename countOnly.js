@@ -1,5 +1,4 @@
 const eqArrays = function(actual, expected) {
-
   if (actual !== expected) {
     return false;
   } else if (actual === expected) {
@@ -15,11 +14,10 @@ const eqArrays = function(actual, expected) {
   }
 
   return true;
-  
 };
 
 const assertEqual = function(arr1, arr2) {
-  if (eqArrays(arr1,arr2)) {
+  if (eqArrays(arr1, arr2)) {
     console.log(`✅✅✅Assertion Passed: ${arr1}  ===  ${arr2}`);
   } else {
     console.log(`🛑🛑🛑Assertion Failed: ${arr1} !== ${arr2}`);
@@ -50,14 +48,8 @@ const countOnly = function(allItems, itemsToCount) {
       }
     }
   }
-  
+
   return results;
 };
 
 module.exports = countOnly;
-
-// const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true });
-// console.log(result1);
-// assertEqual(result1["Jason"], 1);
-// assertEqual(result1["Karima"], undefined);
-// assertEqual(result1["Fang"], 2);

@@ -1,4 +1,4 @@
-const tail = (arr) => {
+const tail = arr => {
   let result = [];
   if (arr.length > 1) {
     for (let i = 1; i < arr.length; i++) {
@@ -11,4 +11,3 @@ const tail = (arr) => {
 console.log(tail([]));
 
 module.exports = tail;
-

@@ -1,8 +1,7 @@
-const eqArrays = function(actual, expected){
-
-  if(typeof actual === "object"){
-    for(let i = 0; i < actual.length; i++){
-      if(actual[i] !== expected[i]){     
+const eqArrays = function(actual, expected) {
+  if (typeof actual === "object") {
+    for (let i = 0; i < actual.length; i++) {
+      if (actual[i] !== expected[i]) {
         return false;
       } else {
         return true;
@@ -10,40 +9,39 @@ const eqArrays = function(actual, expected){
     }
   }
 
-  if(actual !== expected){
+  if (actual !== expected) {
     return false;
-  } else if(actual === expected){
-    return true
+  } else if (actual === expected) {
+    return true;
   }
 
   return false;
-  
-}
+};
 
-const assertEqual = function(arr1, arr2){
-  if(eqArrays(arr1,arr2)){
+const assertEqual = function(arr1, arr2) {
+  if (eqArrays(arr1, arr2)) {
     console.log(`✅✅✅Assertion Passed: ${arr1}  ===  ${arr2}`);
-  } else{
+  } else {
     console.log(`🛑🛑🛑Assertion Failed: ${arr1} !== ${arr2}`);
   }
-}
+};
 
-const str  = "lighthouse in the house";
+const str = "lighthouse in the house";
 
 const letterPositions = function(sentence) {
   const results = {};
   let len = 0;
 
-  for(let item of sentence){
-    if(!results[item]){
-      if(item !== ' '){
+  for (let item of sentence) {
+    if (!results[item]) {
+      if (item !== " ") {
         results[item] = [];
         results[item].push(sentence.indexOf(item));
       }
-    } else { 
+    } else {
       len = results[item].length - 1;
       let num = results[item][len];
-      results[item].push(sentence.indexOf(item,num + 1));
+      results[item].push(sentence.indexOf(item, num + 1));
     }
   }
 
@@ -52,5 +50,3 @@ const letterPositions = function(sentence) {
 
 module.exports = letterPositions;
 
-// console.log(letterPositions("hello").e);
-// assertEqual(letterPositions("hello").e, [ 1 ]);

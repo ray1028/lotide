@@ -1,40 +1,37 @@
-const eqArrays = function(actual, expected){
-
-  if(actual !== expected){
+const eqArrays = function(actual, expected) {
+  if (actual !== expected) {
     return false;
-  } else if(actual === expected){
-    return true
+  } else if (actual === expected) {
+    return true;
   }
 
-  if(typeof actual === "object"){
-    for(let i = 0; i < actual.length; i++){
-      if(actual[i] !== expected[i]){
+  if (typeof actual === "object") {
+    for (let i = 0; i < actual.length; i++) {
+      if (actual[i] !== expected[i]) {
         return false;
       }
     }
   }
 
   return true;
-  
-}
+};
 
-const assertEqual = function(arr1, arr2){
-  if(eqArrays(arr1,arr2)){
+const assertEqual = function(arr1, arr2) {
+  if (eqArrays(arr1, arr2)) {
     console.log(`✅✅✅Assertion Passed: ${arr1}  ===  ${arr2}`);
-  } else{
+  } else {
     console.log(`🛑🛑🛑Assertion Failed: ${arr1} !== ${arr2}`);
   }
-}
+};
 
 let str = "lighthouse in the house";
 
-const countLetter = (input) => {
-
-  let strNoSpace = input.split(' ').join('');
+const countLetter = input => {
+  let strNoSpace = input.split(" ").join("");
   let result = {};
 
-  for(let item of strNoSpace){
-    if(!result[item]){
+  for (let item of strNoSpace) {
+    if (!result[item]) {
       result[item] = 1;
     } else {
       result[item] += 1;
@@ -42,8 +39,6 @@ const countLetter = (input) => {
   }
 
   return result;
-}
+};
 
 module.exports = countLetter;
-
-  // assertEqual(countLetter(str)['o'],2);

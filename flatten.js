@@ -1,5 +1,4 @@
 const eqArrays = function(actual, expected) {
-
   let result = true;
 
   if (actual.length !== expected.length) {
@@ -14,25 +13,23 @@ const eqArrays = function(actual, expected) {
     }
   }
   return result;
-
 };
 
 const assertArraysEqual = function(arr1, arr2) {
-  if (eqArrays(arr1,arr2)) {
+  if (eqArrays(arr1, arr2)) {
     console.log(`✅✅✅Assertion Passed: ${arr1}  ===  ${arr2}`);
   } else {
     console.log(`🛑🛑🛑Assertion Failed: ${arr1} !== ${arr2}`);
   }
 };
 
-const flatten = (input) => {
-  
+const flatten = input => {
   let arr1 = [];
   let arr2 = [];
   let arr3 = [];
   let result = [];
 
-  if(!input.length){
+  if (!input.length) {
     return result;
   }
 
@@ -55,7 +52,3 @@ const flatten = (input) => {
 };
 
 module.exports = flatten;
-// console.log(flatten([]));
-// flatten([1, 2, [3, 4], 5, [6]]);
-
-// assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]),[1, 2, 3, 4, 5, 6]);
